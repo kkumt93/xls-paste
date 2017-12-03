@@ -1,5 +1,5 @@
-#data path          sheet-name  row col offsetX offsetY
-./data/data1.txt	Sheet1      5   5   0       0
-./data/data2.txt	Sheet2      5   5   0       0
-./data/data1.txt	Sheet3      5   5   0       0
-./data/data2.txt	Sheet3      5   5   7       0
+#data path          sheet-name  offsetX offsetY
+./data/data1.txt	Sheet1      0       0
+./data/data2.txt	Sheet2      0       0
+./data/data1.txt	Sheet3      0       0
+./data/data2.txt	Sheet3      7       0
