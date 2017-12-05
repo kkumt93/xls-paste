@@ -1,0 +1,1 @@
+python xls-paste.py template.xls out.xls file_list.txt
