@@ -3,26 +3,27 @@ import sys
 
 args = sys.argv
 
-xls_file = args[1]
-out_file = args[2]
-ini_file = args[3]
+xls_file  = args[1]
+out_file  = args[2]
+file_list = args[3]
 
 #Write  Excel
 wb = xw.Book(xls_file)
-for file_path in open(ini_file, "r"):
-    if file_path[0] == "#":
+for line_data in open(file_list, "r"):
+    if line_data[0] == "#":
         continue
-    path = file_path.split()
+    split_line_data = line_data.split()
 
-    col = sum(1 for line in open(path[0])) - 1
-    offset_y = int(path[2])
-    offset_x = int(path[3])
+    col = sum(1 for line in open(split_line_data[0])) - 1
+    sheets = split_line_data[1]
+    offset_y = int(split_line_data[2]) + 1
+    offset_x = int(split_line_data[3]) + 1
 
     for y in range(col):
         x = 0
-        for data_path in open(path[0], "r"):
-            data = data_path.split()
-            wb.sheets[path[1]].range(x+offset_x+1, y+offset_y+1).value = data[y]
+        for text_data in open(split_line_data[0], "r"):
+            data = text_data.split()
+            wb.sheets[sheets].range(x+offset_x, y+offset_y).value = data[y]
             x=x+1
         
 #Save Excel
