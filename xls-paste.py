@@ -16,8 +16,8 @@ for line_data in open(file_list, "r"):
 
     col = sum(1 for line in open(split_line_data[0])) - 1
     sheets = split_line_data[1]
-    offset_y = int(split_line_data[2]) + 1
-    offset_x = int(split_line_data[3]) + 1
+    offset_x = int(split_line_data[2]) + 1
+    offset_y = int(split_line_data[3]) + 1
 
     for y in range(col):
         x = 0
