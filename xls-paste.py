@@ -23,7 +23,7 @@ for line_data in open(file_list, "r"):
     for text_data in open(split_line_data[0], "r"):
         data = text_data.split()
         wb.sheets[sheets].range(offset_y + y, offset_x).value = data
-        y+=1
+        y += 1
         
 #Save Excel
 wb.save(out_file)
