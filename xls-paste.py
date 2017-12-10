@@ -19,12 +19,11 @@ for line_data in open(file_list, "r"):
     offset_x = int(split_line_data[2]) + 1
     offset_y = int(split_line_data[3]) + 1
 
-    for x in range(col):
-        y = 0
-        for text_data in open(split_line_data[0], "r"):
-            data = text_data.split()
-            wb.sheets[sheets].range(y+offset_y, x+offset_x).value = data[x]
-            y=y+1
+    y = 0
+    for text_data in open(split_line_data[0], "r"):
+        data = text_data.split()
+        wb.sheets[sheets].range(offset_y + y, offset_x).value = data
+        y+=1
         
 #Save Excel
 wb.save(out_file)
