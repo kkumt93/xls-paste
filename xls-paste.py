@@ -3,8 +3,8 @@ import sys
 
 args = sys.argv
 
-xls_file  = args[1]
-out_file  = args[2]
+xls_file = args[1]
+out_file = args[2]
 file_list = args[3]
 
 #Write  Excel
@@ -23,6 +23,6 @@ for line_data in open(file_list, "r"):
         data = text_data.split()
         wb.sheets[sheets].range(offset_y + y, offset_x).value = data
         y += 1
-        
+
 #Save Excel
 wb.save(out_file)
